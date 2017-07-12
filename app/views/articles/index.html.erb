@@ -2,14 +2,14 @@
 
 <%= link_to 'Добавить статью', new_article_path %>
 
-<table>
+<table class="table">
  
   <% @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>
-      <td><%= link_to 'Показать', article_path(article) %></td>
-      <td><%= link_to 'Изменить', edit_article_path(article) %></td>
-      <td><%= link_to 'Удалить', article_path(article), method: :delete,
+      <td><%= link_to 'Показать', article_path(article) %>  
+      <%= link_to 'Изменить', edit_article_path(article) %>  
+      <%= link_to 'Удалить', article_path(article), method: :delete,
               data: { confirm: 'Вы уверены?' } %></td>
     </tr>
     <tr>
