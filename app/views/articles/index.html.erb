@@ -1,19 +1,38 @@
-<h1>Список статей</h1>
+<h1 class="page-header">
+  БЛОГ
+  <small>Истории и новости об инструментах разработчика</small>
+</h1>
 
 <%= link_to 'Добавить статью', new_article_path %>
 
-<table class="table">
- 
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= link_to 'Показать', article_path(article) %>  
-      <%= link_to 'Изменить', edit_article_path(article) %>  
-      <%= link_to 'Удалить', article_path(article), method: :delete,
-              data: { confirm: 'Вы уверены?' } %></td>
-    </tr>
-    <tr>
-      <td><%= article.text %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <% @articles.each do |article| %>
+      <h2>
+        <%= article.title %>
+      </h2>
+      <p class="lead">
+        от <%= link_to 'Пользователя' %>
+      </p>
+      <p><span class="glyphicon glyphicon-time"></span> Опубликовано <%= article.created_at %></p>
+      <p class="box-text" id="text-preview">
+        <%= article.text %>
+      </p>
+      <%= link_to ('Продолжить чтение <span class="glyphicon glyphicon-chevron-right"></span>').html_safe, 
+      article_path(article), :class => "btn btn-primary" %> 
+      <%= link_to 'Изменить', edit_article_path(article) %> /
+      <%= link_to 'Удалить', article_path(article), method: :delete, data: { confirm: 'Вы уверены?' } %>
+      <hr>
+      <% end %>
+      <ul class="pager">
+        <li class="previous">
+          <a href="#">&larr; СЮДА</a>
+        </li>
+        <li class="next">
+          <a href="#">ТУДА &rarr;</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
