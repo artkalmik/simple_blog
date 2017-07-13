@@ -3,7 +3,7 @@
   <%= @article.title %>
 </p>
  
-<p>
+<p class="box-text">
   <strong>Текст:</strong>
   <%= @article.text %>
 </p>
@@ -14,5 +14,5 @@
 <h2>Добавить комментарий:</h2>
 <%= render 'comments/form' %>
 
-<%= link_to 'Изменить', edit_article_path(@article) %>
+<%= link_to 'Изменить', edit_article_path(@article) %> /
 <%= link_to 'Назад', articles_path %>
