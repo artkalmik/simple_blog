@@ -2,6 +2,10 @@
   <strong>Название статьи:</strong>
   <%= @article.title %>
 </p>
+
+<p>
+  <%= raw @article.tags.map { |t| link_to t.name, articles_path(tag: t.name) }.join(', ') %>
+</p>
  
 <p class="box-text">
   <strong>Текст:</strong>
