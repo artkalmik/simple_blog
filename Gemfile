@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails'
+# gem 'acts-as-taggable-on', '~> 4.0'
+gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

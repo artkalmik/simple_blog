@@ -12,6 +12,9 @@
       <h2>
         <%= article.title %>
       </h2>
+      <p>
+        <%= raw article.tags.map { |t| link_to t.name, articles_path(tag: t.name) }.join(', ') %>
+      </p>
       <p class="lead">
         от <%= link_to 'Пользователя' %>
       </p>
